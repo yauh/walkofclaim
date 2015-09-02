@@ -1,36 +1,30 @@
 # Walk of Claim
+Preliminary readme. Proceed at your own risk.
 
 ## What is it?
-
 Walk of Claim is a small game for mobile devices. Think [Qix](http://en.wikipedia.org/wiki/Qix) and [Ingress](https://www.ingress.com) had a love child.
 
 ## How to play
-
-You can walk around anywhere and start claiming land.
-You click "Claim" and start walking. When you reach your starting point just click "Claimed" and it belongs to you. But look out, if someone else is on a walk of claim and crosses your line, you will lose your currect claim!
+You can walk around anywhere and start claiming land.<br>You click "Claim" and start walking. When you reach your starting point just click "Claimed" and it belongs to you. But look out, if someone else is on a walk of claim and crosses your line, you will lose your currect claim!
 
 ## Highscores:
-
-* Square Meters claimed
-* Number of claims
-* Average claim size
+- Square Meters claimed
+- Number of claims
+- Average claim size
 
 ## Technology
-
-* Meteor
-* Cordova (see http://grigio.org/meteor_and_phonegap_cordova_3_x_build_native_app_android_and_ios )
-* [OpenStreetMap](http://www.openstreetmap.org)
-* [Leaflet](http://leafletjs.com) (?)
-
+- Meteor
+- Cordova (see [http://grigio.org/meteor_and_phonegap_cordova_3_x_build_native_app_android_and_ios](http://grigio.org/meteor_and_phonegap_cordova_3_x_build_native_app_android_and_ios) )
+- [OpenStreetMap](http://www.openstreetmap.org)
+- [Leaflet](http://leafletjs.com) (?)
 
 ## Suggested reading
-
-http://www.macwright.org/2015/03/23/geojson-second-bite.html
+[http://www.macwright.org/2015/03/23/geojson-second-bite.html](http://www.macwright.org/2015/03/23/geojson-second-bite.html)
 
 ### Temporary stuff
-
 REMEMBER TO ADD appcache-extra again
 
+```
 Bochum:walkofclaim stephan$ cordova create woc-cordova de.yauh.walkofclaim "WalkofClaim"
 Creating a new cordova project with name "WalkofClaim" and id "de.yauh.walkofclaim" at location "/Users/stephan/Documents/Code/bitbucket/walkofclaim/woc-cordova"
 Bochum:walkofclaim stephan$ cd woc-cordova/
@@ -58,3 +52,4 @@ Installing "org.apache.cordova.splashscreen" for ios
 Installing "org.apache.cordova.statusbar" for ios
 Installing "org.apache.cordova.vibration" for ios
 Bochum:woc-cordova stephan$ cordova run ios --device
+```
