@@ -1,0 +1,49 @@
+<template name="highscoresCurrentClaims">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Highscores {{remainingTime}}</h1>
+    {{/contentFor}}
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton path="highscores"}}
+    {{/contentFor}}
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-popover="highscorePopnav">
+            {{#if isAndroid}}
+                {{> ionIcon icon='podium'}}
+            {{else}}
+                {{> ionIcon icon='podium'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+    {{#ionContent}}
+        {{#ionList}}
+            {{#ionItem iconRight=true}}
+
+                {{> ionIcon icon="ios-flag"}}
+                <h2>Number of claims</h2>
+
+            {{/ionItem}}
+            {{#each players}}
+
+                {{#ionItem buttonRight=true avatar=true}}
+
+                    {{#if showImage}}
+                        <img src="{{avatar}}">
+                    {{else}}
+                        <img src="/icons/defaultPlayer.jpg">
+                    {{/if}}
+
+                    <h2>{{name}}</h2>
+
+                    <p>currently owns</p>
+                    <button class="button button-positive">{{stats.current.claims}}</button>
+
+                {{/ionItem}}
+
+            {{/each}}
+        {{/ionList}}
+        <p>
+            <br/>
+            <br/>
+        </p>
+    {{/ionContent}}
+</template>

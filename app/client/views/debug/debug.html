@@ -1,0 +1,62 @@
+<template name="debug">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Debug</h1>
+    {{/contentFor}}
+    {{#ionContent}}
+        <h3 class="padding">Debug information {{remainingTime}}</h3>
+
+        <div class="list">
+
+            <a class="item item-icon-left">
+                Build#: {{buildNumber}}
+                {{> ionIcon icon="information-circled"}}
+            </a>
+            <a class="item item-icon-left">
+            Player status: {{playerStatus}}
+            {{> ionIcon icon="person"}}
+            </a>
+            <a class="item item-icon-left">
+                Server status: {{connection.status}}
+                {{> ionIcon icon="network"}}
+            </a>
+            <a class="item item-icon-left">
+                Lat: {{debug.coords.latitude}}<br />
+                Lng: {{debug.coords.longitude}}
+                {{> ionIcon icon="map"}}
+            </a>
+            <a class="item item-icon-left">
+                Accuracy: {{debug.coords.accuracy}}
+                {{> ionIcon icon="pinpoint"}}
+            </a>
+            <a class="item item-icon-left">
+                Altitude: {{debug.coords.altitude}}<br />
+                Accuracy: {{debug.coords.altitudeAccuracy}}
+                {{> ionIcon icon="plane"}}
+            </a>
+            <a class="item item-icon-left">
+                Speed: {{debug.coords.speed}}
+                {{> ionIcon icon="ios-speedometer"}}
+            </a>
+            <a class="item item-icon-left">
+                Heading: {{debug.coords.heading}}
+                {{> ionIcon icon="android-navigate"}}
+            </a>
+            {{#if error}}
+            <a class="item item-icon-left">
+                {{error}}
+                {{> ionIcon icon="ios-bolt"}}
+            </a>
+            {{/if}}
+            {{#if currentUser}}
+                <a class="item item-icon-right" id="idle" href="#">
+                    Reset current game
+                    {{> ionIcon icon="android-warning"}}
+                </a>
+            {{/if}}
+        </div>
+        <p>
+            <br/>
+            <br/>
+        </p>
+    {{/ionContent}}
+</template>

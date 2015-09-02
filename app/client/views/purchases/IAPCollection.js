@@ -1,0 +1,1 @@
+IAPCollection = new Mongo.Collection(null);

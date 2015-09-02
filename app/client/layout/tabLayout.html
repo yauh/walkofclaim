@@ -1,0 +1,27 @@
+<template name="tabLayout">
+    {{#ionBody}}
+        {{> ionNavBar class="bar-positive"}}
+        {{#ionView}}
+            {{> yield}}
+            {{> _tabs}}
+        {{/ionView}}
+    {{/ionBody}}
+</template>
+
+<template name="_tabs">
+    {{#if isAndroid}}
+        {{#ionTabs style="android" class="tabs-background-positive tabs-color-light"}}
+            {{> ionTab title="Walk" path="home" icon="android-walk"}}
+            {{> ionTab title="Scores" path="highscores" icon="trophy"}}
+            {{> ionTab title="Profile" path="profile" icon="android-happy"}}
+            {{> ionTab title="About" path="about" icon="help-circled"}}
+        {{/ionTabs}}
+    {{else}}
+        {{#ionTabs style="ios"}}
+            {{> ionTab title="Walk" path="home" icon="android-walk"}}
+            {{> ionTab title="Scores" path="highscores" icon="trophy"}}
+            {{> ionTab title="Profile" path="profile" icon="ios-person"}}
+            {{> ionTab title="About" path="about" icon="help-circled"}}
+        {{/ionTabs}}
+    {{/if}}
+</template>

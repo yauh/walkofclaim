@@ -1,0 +1,53 @@
+<template name="settings">
+    {{#if currentUser}}
+
+        {{#with settings}}
+
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">Your name</span>
+                    <input type="text" value="{{name}}" id="settings-name">
+                </label>
+
+                <label class="item item-input item-toggle">
+                    <div class="input-label">
+                        Use imperial units
+                    </div>
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" id="settings-imperial-units" checked="{{useImperial}}">
+
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                        Map Theme
+                    </div>
+                    <select id="settings-map-theme">
+                        <option {{isSelected 'Watercolor'}}>Watercolor</option>
+                        <option {{isSelected 'Toner'}}>Toner</option>
+                        <option {{isSelected 'None'}}>None</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-toggle">
+                    <div class="input-label">
+                        Show image in HighScores
+                    </div>
+                    <label class="toggle toggle-assertive">
+                        <input type="checkbox" id="settings-show-image" checked="{{showImage}}">
+
+                        <div class="track">
+                            <div class="handle"></div>
+                        </div>
+                    </label>
+                </label>
+
+            </div>
+        {{/with}}
+    {{/if}}
+
+</template>

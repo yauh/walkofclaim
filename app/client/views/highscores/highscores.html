@@ -1,0 +1,153 @@
+<template name="highscores">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Highscores {{remainingTime}}</h1>
+    {{/contentFor}}
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-popover="highscorePopnav">
+            {{#if isAndroid}}
+                {{> ionIcon icon='podium'}}
+            {{else}}
+                {{> ionIcon icon='podium'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+    {{#ionContent}}
+        {{#with myScores}}
+            {{#ionList}}
+
+                {{#ionItem avatar=true}}
+                    {{#if avatar}}
+                        <img src="{{avatar}}">
+                    {{else}}
+                        <img src="/icons/defaultPlayer.jpg">
+                    {{/if}}
+                    <h2>Scores for {{name}}</h2>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresCurrentClaims" iconLeft=true}}
+
+                    {{> ionIcon icon="ios-flag"}}
+                    <h2>Number of claims</h2>
+
+                    <p>{{positions.currentClaims}}. place</p>
+                    <button class="button button-positive">{{stats.current.claims}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresCurrentArea" iconLeft=true}}
+
+                    {{> ionIcon icon="earth"}}
+                    <h2>Area owned in {{baseUnit}}<sup>2</sup></h2>
+
+                    <p>{{positions.currentArea}}. place</p>
+                    <button class="button button-positive">{{formatWithSystem stats.current.area}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresDestroyedClaims" iconLeft=true}}
+
+                    {{> ionIcon icon="sad-outline"}}
+                    <h2>Claims destroyed</h2>
+
+                    <p>{{positions.destroyedClaims}}. place</p>
+                    <button class="button button-positive">{{ stats.current.destroyedClaims}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresStolenArea" iconLeft=true}}
+
+                    {{> ionIcon icon="arrow-shrink"}}
+                    <h2>Land stolen in {{baseUnit}}<sup>2</sup></h2>
+
+                    <p>{{positions.currentArea}}. place</p>
+                    <button class="button button-positive">{{formatWithSystem stats.current.stolenArea}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresLifetimeAvgSize" iconLeft=true}}
+
+                    {{> ionIcon icon="arrow-resize"}}
+                    <h2>Average claim size in {{baseUnit}}<sup>2</sup></h2>
+
+                    <p>{{positions.lifetimeAvgSize}}. place</p>
+                    <button class="button button-positive">{{formatWithSystem stats.lifetime.avgSize}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresLifetimeDistance" iconLeft=true}}
+
+                    {{> ionIcon icon="android-walk"}}
+                    <h2>Distance walked in {{baseUnit}}</h2>
+
+                    <p>{{positions.lifetimeDistance}}. place</p>
+                    <button class="button button-positive">{{formatWithSystem stats.lifetime.distance}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresLifetimeDuration" iconLeft=true}}
+
+                    {{> ionIcon icon="ios-timer-outline"}}
+                    <h2>Time played</h2>
+
+                    <p>{{positions.lifetimeDuration}}. place</p>
+                    <button class="button button-positive">{{secondsToHms stats.lifetime.duration}}</button>
+
+                {{/ionItem}}
+
+                {{#ionItem buttonRight=true path="highscoresLifetimeAvgSpeed" iconLeft=true}}
+
+                    {{> ionIcon icon="ios-speedometer"}}
+                    <h2>Average speed in {{baseUnit}}/h</h2>
+
+                    <p>{{positions.lifetimeAvgSpeed}}. place</p>
+                    <button class="button button-positive">{{formatWithSystem stats.lifetime.avgSpeed}}</button>
+
+                {{/ionItem}}
+
+            {{/ionList}}
+        {{else}}
+            <p class="padding"> You have no scores yet because you have no claims. Start walking or check out the Top
+                10.</p>
+
+            <div class="list">
+                <a class="item item-icon-left" href="{{pathFor 'highscoresCurrentClaims'}}">
+                    Most claims
+                    {{> ionIcon icon="ios-flag"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresCurrentArea'}}">
+                    Biggest area owned
+                    {{> ionIcon icon="earth"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresDestroyedClaims'}}">
+                    Claims destroyed
+                    {{> ionIcon icon="sad-outline"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresStolenArea'}}">
+                    Land stolen
+                    {{> ionIcon icon="arrow-shrink"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresLifetimeAvgSize'}}">
+                    Average claim size
+                    {{> ionIcon icon="arrow-resize"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresLifetimeDistance'}}">
+                    Distance walked
+                    {{> ionIcon icon="android-walk"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresLifetimeDuration'}}">
+                    Time played
+                    {{> ionIcon icon="ios-timer-outline"}}
+                </a>
+                <a class="item item-icon-left" href="{{pathFor 'highscoresLifetimeAvgSpeed'}}">
+                    Average speed
+                    {{> ionIcon icon="ios-speedometer"}}
+                </a>
+            </div>
+        {{/with}}
+        <p>
+            <br/>
+            <br/>
+        </p>
+    {{/ionContent}}
+</template>

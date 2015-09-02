@@ -1,0 +1,36 @@
+<template name="profile">
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Profile {{remainingTime}}</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <div class="item item-divider">
+                Your settings
+            </div>
+            {{> settings }}
+            <div class="item item-divider">
+                Your choice
+            </div>
+            <a class="item item-icon-right" href="{{pathFor 'purchases'}}">
+                Buy me a tea
+                {{> ionIcon icon="cash"}}
+            </a>
+            <a class="item item-icon-right" id="logout" href="#">
+                Log out
+                {{> ionIcon icon="log-out"}}
+            </a>
+            <a class="item item-icon-right" id="delete-account" href="#">
+                Delete your account
+                {{> ionIcon icon="ios-trash"}}
+            </a>
+            <a class="item item-icon-right" href="{{pathFor 'debug'}}">
+                Debug
+                {{> ionIcon icon="bug"}}
+            </a>
+
+            <p><br/><br/></p>
+        {{/ionContent}}
+    {{/ionView}}
+</template>

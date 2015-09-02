@@ -1,0 +1,41 @@
+<template name="highscorePopnav">
+    {{#ionPopover}}
+        <div class="content">
+            <div class="list">
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresCurrentClaims'}}">
+                    Most claims
+                    {{> ionIcon icon="ios-flag"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresCurrentArea'}}">
+                    Biggest area owned
+                    {{> ionIcon icon="earth"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresDestroyedClaims'}}">
+                    Claims destroyed
+                    {{> ionIcon icon="sad-outline"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresStolenArea'}}">
+                    Land stolen
+                    {{> ionIcon icon="arrow-shrink"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresLifetimeAvgSize'}}">
+                    Average claim size
+                    {{> ionIcon icon="arrow-resize"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresLifetimeDistance'}}">
+                    Distance walked
+                    {{> ionIcon icon="android-walk"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresLifetimeDuration'}}">
+                    Time played
+                    {{> ionIcon icon="ios-timer-outline"}}
+                </a>
+                <a class="item item-icon-left popover-backdrop" href="{{pathFor 'highscoresLifetimeAvgSpeed'}}">
+                    Average speed
+                    {{> ionIcon icon="ios-speedometer"}}
+                </a>
+            </div>
+
+        </div>
+    {{/ionPopover}}
+</template>

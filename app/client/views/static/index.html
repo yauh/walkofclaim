@@ -1,0 +1,13 @@
+<template name="home">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Walk of Claim {{remainingTime}}</h1>
+    {{/contentFor}}
+    {{#ionContent}}
+        {{> map }}
+        {{#if currentUser}}
+            {{> walkbtn}}
+        {{/if}}
+
+     {{/ionContent}}
+</template>
+

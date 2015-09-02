@@ -1,0 +1,51 @@
+<template name="highscoresLifetimeDuration">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Highscores {{remainingTime}}</h1>
+    {{/contentFor}}
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton path="highscores"}}
+    {{/contentFor}}
+    {{#contentFor "headerButtonRight"}}
+        <button class="button button-clear" data-ion-popover="highscorePopnav">
+            {{#if isAndroid}}
+                {{> ionIcon icon='podium'}}
+            {{else}}
+                {{> ionIcon icon='podium'}}
+            {{/if}}
+        </button>
+    {{/contentFor}}
+    {{#ionContent}}
+        {{#ionList}}
+            {{#ionItem iconRight=true}}
+
+                {{> ionIcon icon="ios-timer-outline"}}
+                <h2>Time played</h2>
+
+            {{/ionItem}}
+            {{#each players}}
+
+                {{#ionItem buttonRight=true avatar=true}}
+
+                    {{#if showImage}}
+                        <img src="{{avatar}}">
+                    {{else}}
+                        <img src="/icons/defaultPlayer.jpg">
+                    {{/if}}
+
+                    <h2>{{name}}</h2>
+
+                    <p>Walked around for</p>
+                    <button class="button button-positive">{{secondsToHms stats.lifetime.duration}}</button>
+
+                {{/ionItem}}
+
+            {{/each}}
+        {{/ionList}}
+        <p>
+            <br/>
+            <br/>
+        </p>
+    {{/ionContent}}
+
+
+</template>

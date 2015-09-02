@@ -1,0 +1,21 @@
+<template name="purchases">
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Buy me a tea</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <div class="item item-divider">
+                Like the app? Buy me a cuppa...
+            </div>
+            {{#each products}}
+                <a class="item item-icon-right purchase" id="{{id}}" href="#">
+                    {{title}}<br /><small>for {{price}}</small>
+                    {{> ionIcon icon=icon}}
+                </a>
+            {{/each}}
+        {{/ionContent}}
+    {{/ionView}}
+</template>
+

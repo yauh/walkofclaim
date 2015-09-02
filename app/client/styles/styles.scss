@@ -1,0 +1,124 @@
+$positive: #1f313c;
+$loading-font-size: 22px;
+
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionic-sass/ionic';
+@import '.meteor/local/build/programs/server/assets/packages/meteoric_ionicons-sass/ionicons';
+
+#map {
+  height: 100%;
+}
+
+#content {
+  padding-top: 60px;
+}
+
+.ionic-body.platform-android {
+  font-family: "Roboto", sans-serif;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  .tab-item {
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.ion-slide {
+  text-align: center;
+  padding-top: 200px;
+
+  &.dark-bg {
+    h3 {
+      color: #fff;
+    }
+  }
+}
+
+.popover {
+  height: auto;
+}
+
+.item-button-left, .item-button-right {
+  button {
+    top: 16px !important;
+  }
+}
+
+ol {
+  counter-reset: li; /* Initiate a counter */
+  margin-left: 0; /* Remove the default left margin */
+  padding-left: 0; /* Remove the default left padding */
+}
+
+ol > li {
+  position: relative; /* Create a positioning context */
+  margin: 0 0 6px 2em; /* Give each list item a left margin to make room for the numbers */
+  padding: 4px 8px; /* Add some spacing around the content */
+  list-style: none; /* Disable the normal item numbering */
+  border-top: 2px solid #666;
+  background: #f6f6f6;
+}
+
+ol > li:before {
+  content: counter(li); /* Use the counter as content */
+  counter-increment: li; /* Increment the counter by 1 */
+  /* Position and style the number */
+  position: absolute;
+  top: -2px;
+  left: -2em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 2em;
+  /* Some space between the number and the content in browsers that support
+     generated content but not positioning it (Camino 2 is one example) */
+  margin-right: 8px;
+  padding: 3px;
+  border-top: 1px solid #666;
+  color: #fff;
+  background: #666;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  text-align: center;
+}
+
+li ol,
+li ul {
+  margin-top: 5px;
+}
+
+ol ol li:last-child {
+  margin-bottom: 0;
+}
+
+
+#btn-walk {
+  position: absolute;
+  bottom:49px;
+  left: 0;
+  right: 0;
+  width: 75%;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+
+/* https://github.com/meteoric/meteor-ionic/issues/130#issuecomment-105853777
+ */
+.content.overflow-scroll {
+  bottom: 0px !important;
+}
+
+body.keyboard-open .platform-android .content.overflow-scroll {
+  bottom: 0px !important;
+}
+
+#invisible {
+  opacity: 0;
+  height: 1px;
+  -webkit-appearance: none;
+}

@@ -1,0 +1,31 @@
+<template name="welcome">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">Welcome to Walk of Claim</h1>
+    {{/contentFor}}
+    {{#ionContent class="has-tabs"}}
+        {{#if currentUser}}
+            <h1>Huh?</h1>
+
+            <p>How did you get here - you're supposed to be out there, claiming land!</p>
+        {{else}}
+            <h1 class="padding">Howdy, stranger!</h1>
+        <div id="invisible">
+            <select id="top"></select>
+        </div>
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Sign up and start walking around to claim all the land around you!
+                </div>
+            </div>
+            {{>atForm}}
+            <div class="card">
+                <div class="item item-text-wrap">
+                    This game requires you to identify yourself. We're using your Twitter or Facebook account or an email address to allow
+                    the game to know which claims belong to you. Don't worry - it never shares any of your data with any social
+                    networks. It also doesn't spam, but you can reset your password via email.
+                </div>
+            </div>
+        {{/if}}
+        <p><br/><br/></p>
+    {{/ionContent}}
+</template>

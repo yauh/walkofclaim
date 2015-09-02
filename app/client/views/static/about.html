@@ -1,0 +1,66 @@
+<template name="about">
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">About {{remainingTime}}</h1>
+    {{/contentFor}}
+    {{#ionContent}}
+        <h1 class="padding">About the game</h1>
+
+        <p class="padding"><em>Walk of Claim</em> allows you to capture unclaimed land or steal from others. Start a
+            claim by clicking
+            the
+            <em>claim</em> button and walk until you come back to where you started to finish the claim. This patch
+            of land now belongs to you. But beware, others can steal your valuable land...</p>
+
+        <h2 class="padding">Rules</h2>
+        <ol id="rules">
+            <li><strong>Walk around your land!</strong><br/>Each claim starts and ends at the same position. You must
+                walk around a patch of land, no zig-zag courses!
+            </li>
+            <li><strong>Walk, don't drive!</strong><br/>You cannot use any vehicles for claiming land. Running is ok,
+                biking is not.
+            </li>
+            <li><strong>Be quick!</strong><br/>Walk durations are limited to one hour so your claim must be finished
+                within 60 minutes.
+            </li>
+            <li><strong>The last claim wins!</strong><br/>Previously claimed land may be captured by another player if
+                they successfully claim it. If you capture an entire claim you effectively destroy it.
+            </li>
+        </ol>
+
+        <h2 class="padding">Privacy</h2>
+
+        <p class="padding">Privacy is important, therefore you will never share any information about yourself unless
+            you really want
+            to.<br/>Everybody will be able to see your walks and claims on the map, but neither walks nor claims can be
+            connected to you. By default the app uses an alias
+            name which is shown in the high-score list. Feel free to change this name to your real name and - if you
+            want - enable sharing your Facebook or Twitter image.<br/>
+            Use the profile settings to adjust your privacy settings.</p>
+
+        <h2 class="padding">Disclaimer</h2>
+
+        <p class="padding">Originally this game was created for personal use only. I was looking for a casual game that
+            involves walking and gives me motiviation to reach the 10k step goal my fitness tracker is so keen on.<br/>
+            I welcome everyone to play as well, the more the merrier!</p>
+
+        <p class="padding">To be able to identify you as a player you need to log in via Twitter or Facebook. No
+            information from your
+            account will ever be read or even sold to advertisers. All the application needs is to tell you apart from
+            other players.<br/>
+            All your location data is anonymized and stored on the gaming servers and linked to your unique player ID in
+            the game. It is not associated with your accounts in any social network. Should you ever have enough of
+            playing you may easily delete your account. This will remove all your personal information and connections
+            to social networks. Note that it does not remove your (now anonymous and orphaned) walks and claims to
+            ensure high score consistency.<br/>
+            If you like the game you can buy me a cuppa tea via the in-app purchases in your profile page.</p>
+
+        <p class="padding has-tabs">The app is provided as is. I take no responsibilities for accidents or injuries that occured
+            in combination
+            with using this app.<br/> <strong>Always keep your eyes open and mind the traffic!</strong></p>
+<p>
+    <br/>
+    <br/>
+</p>
+
+    {{/ionContent}}
+</template>

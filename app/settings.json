@@ -1,0 +1,13 @@
+{
+  "public": {
+    "buildNumber": 137
+  },
+  "facebook": {
+    "appId": "changeme",
+    "secret": "changeme"
+  },
+  "twitter": {
+    "consumerKey": "changeme",
+    "secret": "changeme"
+  }
+}

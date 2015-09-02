@@ -1,0 +1,13 @@
+{
+  "public": {
+    "buildNumber": "local"
+  },
+  "facebook": {
+    "appId": "changeme",
+    "secret": "changeme"
+  },
+  "twitter": {
+    "consumerKey": "changeme",
+    "secret": "changeme"
+  }
+}
